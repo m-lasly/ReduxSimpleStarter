@@ -17,7 +17,7 @@ class App extends Component {
       videos: [],
       selectedVideo: null
     };
-this.videoSearch('surfboards');
+    this.videoSearch('surfboards');
   }
   videoSearch(term) {
     YTSearch({
@@ -29,7 +29,9 @@ this.videoSearch('surfboards');
     });
   }
   render() {
-    const videoSearch= _.debounce((term) => {this.videoSearch(term)},300);
+    const videoSearch = _.debounce((term) => {
+      this.videoSearch(term)
+    }, 300);
     return (
       <div>
         <SearchBar onSearchTermChange={videoSearch}/>
